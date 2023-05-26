@@ -38,14 +38,11 @@ function GameScreen({ userNumber, onGameOver }) {
   }, []);
 
   function nextGuessHandler(direction) {
-    console.log("======== I entered here =========");
-    console.log(direction);
     // could be either 'lower' or 'higher'
     if (
       (direction === "lower" && currentGuess < userNumber) ||
       (direction === "higher" && currentGuess > userNumber)
     ) {
-      console.log("======= I got here ==========");
       return Alert.alert("Don't lie!", "You know this is wrong.....", [
         { text: "Sorry!", style: "cancel" },
       ]);
@@ -115,6 +112,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 40,
+    alignItems: "center",
   },
   instructionText: {
     marginBottom: 12,
